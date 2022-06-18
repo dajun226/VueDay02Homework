@@ -11,7 +11,9 @@
 <body>
     <script>
         function getURLParameters(url) {
-            return url
+            // 去掉最后一个#号
+            const newUrl = url.substring(0,url.length -1 )
+            return newUrl
                 .split('?') //取？分割
                 .slice(1) //不要第一部分
                 .join() //拼接
@@ -24,10 +26,9 @@
                     }, {}
                 )
         }
-        const url = "http://www.baidu.com/?name=zhangsan&age=18&sex=nan#"
-        // 去掉最后一个#号
-        const newUrl = url.substring(0,url.length -1 )
-        console.log(getURLParameters(newUrl));
+        
+        
+        console.log(getURLParameters("http://www.baidu.com/?name=zhangsan&age=18&sex=nan#"));
     </script>
 </body>
 
